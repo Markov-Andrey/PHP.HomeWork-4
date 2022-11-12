@@ -64,5 +64,18 @@
 
   task('end');
 
+
+  task('start');
+  condition('5. Выведите текущую дату-время в форматах
+  \'2025-12-31\', \'31.12.2025\', \'31.12.13\', \'12:59:59\', timestamp.');
+
+  add(date("Y-m-j"));
+  add(date("j.m.Y"));
+  add(date("j.m.y"));
+  add(date("H:i:s"));
+  add("Прошло секунд с 1 января 1970 00:00:00 GMT - ".time());
+
+  task('end');
+
   include('./src/footer.php');
 ?>
