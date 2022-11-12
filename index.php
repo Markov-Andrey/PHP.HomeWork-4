@@ -26,5 +26,31 @@
 
   task('end');
 
+
+  task('start');
+  condition('2. Дана строка \'html <b>css</b> php\'. Удалите теги из этой строки. С
+  помощью функции explode запишите каждое слово этой строки в отдельный
+  элемент массива.');
+
+  $str1 = "html <b>css</b> php";
+  $str1 = strip_tags($str1);
+  add($str1);
+  $strArr = explode(' ', $str1);
+  foreach($strArr as $s){
+    add($s);
+  }
+
+  task('end');
+
+
+  task('start');
+  condition('3. Дана строка. Перемешайте символы этой строки в случайном порядке.');
+
+  add("До: ".$str);
+  $str = str_shuffle($str);
+  add("После: ".$str);
+
+  task('end');
+
   include('./src/footer.php');
 ?>
