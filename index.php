@@ -52,5 +52,17 @@
 
   task('end');
 
+
+  task('start');
+  condition('4. Найдите количество дней в текущем месяце. Скрипт должен работать
+  независимо от месяца, в котором он запущен.');
+
+  $currentMonth  = date('m');
+  $currentYear  = date('Y');
+  $date = cal_days_in_month(CAL_GREGORIAN, $currentMonth, $currentYear);
+  add("Всего дней в $currentMonth месяце в $currentYear году - $date");
+
+  task('end');
+
   include('./src/footer.php');
 ?>
