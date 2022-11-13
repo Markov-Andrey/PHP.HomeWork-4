@@ -77,5 +77,24 @@
 
   task('end');
 
+
+  task('start');
+  condition('6. В переменной $date лежит дата в формате \'2025-12-31\'. Прибавьте к этой
+  дате 2 дня, 1 месяц и 3 дня, 1 год. Отнимите от этой даты 3 дня. ');
+
+  function datePlusMinus($arg)
+  {
+    $plus = strtotime($arg);
+    $date = date("Y-m-j", $plus);
+
+    return add($date);
+  }
+
+  datePlusMinus('+2 days, +1 month');
+  datePlusMinus('+3 days, +1 year');
+  datePlusMinus('-3 days');
+
+  task('end');
+
   include('./src/footer.php');
 ?>
