@@ -18,7 +18,6 @@
   строку \'London Is The Capital Of Great Britain\'.');
 
   $str = "london is the capital of great britain";
-
   add("До: {$str}");
   $strArr = explode(' ', $str);
   foreach($strArr as &$s) $s = ucfirst($s);
@@ -118,6 +117,14 @@
   $arr = [4, -2, 5, 19, -130, 0, 10];
   print_r($arr);
   add(max($arr));
+
+  task('end');
+
+
+  task('start');
+  condition('9. Выведите на экран случайное число от 1 до 100.');
+
+  add(mt_rand(1,100));
 
   task('end');
 
