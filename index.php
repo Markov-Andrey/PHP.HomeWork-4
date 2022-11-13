@@ -174,5 +174,22 @@
 
   task('end');
 
+
+  task('start');
+  condition('12. Есть массив $array = array(1,1,1,2,2,2,2,3), необходимо вывести 1,2,3, то
+  есть вывести без дублей при помощи лишь одного цикла и без использования
+  функций PHP.');
+  
+  $arr = array(1,1,1,2,2,2,2,3);
+  $uniqArr = array();
+  foreach ($arr as $a) {
+      if (!in_array($a, $uniqArr)) {
+          $uniqArr[] = $a;
+          add ($a);
+      }
+  }
+
+  task('end');
+
   include('./src/footer.php');
 ?>
