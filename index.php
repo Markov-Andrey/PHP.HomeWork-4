@@ -18,11 +18,12 @@
   строку \'London Is The Capital Of Great Britain\'.');
 
   $str = "london is the capital of great britain";
-  add("До: ".$str);
+
+  add("До: {$str}");
   $strArr = explode(' ', $str);
   foreach($strArr as &$s) $s = ucfirst($s);
   $str = implode(' ', $strArr);
-  add("После: ".$str);
+  add("После: {$str}");
 
   task('end');
 
@@ -46,9 +47,9 @@
   task('start');
   condition('3. Дана строка. Перемешайте символы этой строки в случайном порядке.');
 
-  add("До: ".$str);
+  add("До: {$str}");
   $str = str_shuffle($str);
-  add("После: ".$str);
+  add("После: {$str}");
 
   task('end');
 
@@ -93,6 +94,19 @@
   datePlusMinus('+2 days, +1 month');
   datePlusMinus('+3 days, +1 year');
   datePlusMinus('-3 days');
+
+  task('end');
+
+
+  task('start');
+  condition('7. Дана строка с буквами и цифрами, например, \'1a2b3c4b5d6e7f8g9h0\'.
+  Удалите из нее все цифры. То есть в нашем случае должна получится строка
+  \'abcbdefgh\'.');
+
+  $str1 = '1a2b3c4b5d6e7f8g9h0';
+  add("До: {$str1}");
+  $str1 = preg_replace('/\d/', '' ,$str1);
+  add("После: {$str1}");
 
   task('end');
 
