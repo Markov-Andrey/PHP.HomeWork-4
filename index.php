@@ -155,7 +155,8 @@
   Найдите сумму элементов этого массива. Массив, конечно же, может быть
   произвольным.');
   
-	function arrSum($arr) {
+	function arrSum($arr) 
+  {
 		$sum = 0;
 		foreach ($arr as $a) {
 			if (is_array($a)) {
@@ -188,6 +189,41 @@
           add ($a);
       }
   }
+
+  task('end');
+
+
+  task('start');
+  condition('13. Используя ассоциативный массив, добавить на страницу навигационное
+  меню вида:
+  <ul>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="about.php">About</a></li>
+    <li><a href="services.php">Services</a></li>
+    <li><a href="catalog.php">Catalog</a></li>
+    <li><a href="contacts.php">Contacts</a></li>
+  </ul>
+  Заполните массив соблюдая сл. условия: название индексов являются именем
+  файла (без расширения), на который ссылается меню; значения массива явл.
+  названиями пунктов меню.
+  ');
+  
+  $arrMenu = [
+    'index' => 'Home',
+    'about' => 'About',
+    'services' => 'Services',
+    'catalog' => 'Catalog',
+    'contacts' => 'Contacts',
+  ];
+  function menu($arr)
+  {
+    echo '<ul>';
+    foreach ($arr as $index => $name) {
+      echo "<li><a href=\"{$index}.php\">{$name}</a></li>";
+    }
+    echo '</ul>';
+  }
+  menu($arrMenu);
 
   task('end');
 
