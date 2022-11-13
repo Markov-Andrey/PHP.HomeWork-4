@@ -110,5 +110,16 @@
 
   task('end');
 
+
+  task('start');
+  condition('8. Даны числа 4, -2, 5, 19, -130, 0, 10. Найдите минимальное и максимальное
+  число.');
+
+  $arr = [4, -2, 5, 19, -130, 0, 10];
+  print_r($arr);
+  add(max($arr));
+
+  task('end');
+
   include('./src/footer.php');
 ?>
