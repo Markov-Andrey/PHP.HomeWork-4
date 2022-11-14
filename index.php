@@ -231,8 +231,22 @@
   task('start');
   condition('14. Вывести на черном фоне n красных квадратов случайного размера в
   случайной позиции в браузере.');
-
-  add('???');
+  
+  add('Сделал круги вместо квадратов, генератор цветов взят из задания 17');
+  echo "<div class='blackSquare'>";
+  for($i = 0; $i < 250; $i++){
+    $a = mt_rand(0, 100);
+    $b = mt_rand(0, 100);
+    $rad = mt_rand(7, 75);
+    echo "<div class='square' 
+      style='
+        top: {$a}%; 
+        left: {$b}%; 
+        width: {$rad}px; 
+        height: {$rad}px; 
+      background-color: ".color()."'></div>";
+  }
+  echo '</div>';
 
   task('end');
 
@@ -243,7 +257,16 @@
   и так далее пока символы в строке не закончатся');
 
   $str = '1234567890';
-  $arr = [];
+  $arrResult = [];
+  $i = 0;
+  $j = 1;
+  while ($i < strlen($str)){
+    $sub = mb_substr($str, $i, $j);
+    array_push($arrResult, $sub);
+    $i += $j;
+    $j++;
+  }
+  var_dump($arrResult);
 
   task('end');
 
@@ -292,15 +315,18 @@
   (dechex) формате (типа #ffffff).');
   
   //каждое значение случайным образом поднимается из массива
-  $rand = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 
-          'a', 'b', 'c', 'd', 'e', 'f'];
-  $color = '#'.
-            $rand[mt_rand(0,15)].
-            $rand[mt_rand(0,15)].
-            $rand[mt_rand(0,15)].
-            $rand[mt_rand(0,15)].
-            $rand[mt_rand(0,15)];
-  add($color);
+  function color(){
+    $rand = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 
+            'a', 'b', 'c', 'd', 'e', 'f'];
+    return $color = '#'.
+              $rand[mt_rand(0,15)].
+              $rand[mt_rand(0,15)].
+              $rand[mt_rand(0,15)].
+              $rand[mt_rand(0,15)].
+              $rand[mt_rand(0,15)].
+              $rand[mt_rand(0,15)];
+  }
+  add(color());
 
   task('end');
 
